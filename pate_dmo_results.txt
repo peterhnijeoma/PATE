@@ -1,0 +1,249 @@
+(pytorch) ubuntu@ip-172-31-14-133:~/code$ ./run_pate.sh
+running for epsilon = 0.2 and SVHN
+
+running for 10 0.2 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 2.195..  Average Test Accuracy: 0.259..  Elapsed time is: 37.585 minutes
+running for 20 0.2 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.772..  Average Test Accuracy: 0.425..  Elapsed time is: 38.118 minutes
+running for 50 0.2 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.445..  Average Test Accuracy: 0.560..  Elapsed time is: 41.380 minutes
+running for 60 0.2 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.598..  Average Test Accuracy: 0.510..  Elapsed time is: 42.064 minutes
+running for 80 0.2 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.551..  Average Test Accuracy: 0.531..  Elapsed time is: 44.172 minutes
+running for 100 0.2 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.467..  Average Test Accuracy: 0.558..  Elapsed time is: 46.178 minutes
+running for 120 0.2 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.514..  Average Test Accuracy: 0.552..  Elapsed time is: 49.051 minutes
+running for 150 0.2 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.573..  Average Test Accuracy: 0.536..  Elapsed time is: 51.270 minutes
+running for 180 0.2 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.650..  Average Test Accuracy: 0.511..  Elapsed time is: 54.854 minutes
+running for 200 0.2 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.719..  Average Test Accuracy: 0.526..  Elapsed time is: 56.224 minutes
+running for 220 0.2 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.713..  Average Test Accuracy: 0.528..  Elapsed time is: 59.681 minutes
+running for 250 0.2 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.963..  Average Test Accuracy: 0.500..  Elapsed time is: 61.369 minutes
+running for epsilon = 0.1 and SVHN
+
+running for 10 0.1 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 2.276..  Average Test Accuracy: 0.198..  Elapsed time is: 37.659 minutes
+running for 20 0.1 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 2.194..  Average Test Accuracy: 0.238..  Elapsed time is: 37.772 minutes
+running for 50 0.1 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.697..  Average Test Accuracy: 0.431..  Elapsed time is: 41.009 minutes
+running for 60 0.1 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.518..  Average Test Accuracy: 0.512..  Elapsed time is: 42.001 minutes
+running for 80 0.1 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.492..  Average Test Accuracy: 0.488..  Elapsed time is: 44.376 minutes
+running for 100 0.1 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.540..  Average Test Accuracy: 0.506..  Elapsed time is: 45.979 minutes
+running for 120 0.1 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.509..  Average Test Accuracy: 0.534..  Elapsed time is: 49.210 minutes
+running for 150 0.1 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.665..  Average Test Accuracy: 0.529..  Elapsed time is: 53.143 minutes
+running for 180 0.1 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.611..  Average Test Accuracy: 0.500..  Elapsed time is: 55.787 minutes
+running for 200 0.1 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.822..  Average Test Accuracy: 0.474..  Elapsed time is: 57.528 minutes
+running for 220 0.1 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.670..  Average Test Accuracy: 0.511..  Elapsed time is: 60.442 minutes
+running for 250 0.1 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.720..  Average Test Accuracy: 0.508..  Elapsed time is: 62.786 minutes
+running for epsilon = 0.5 and SVHN
+running for 10 0.5 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.592..  Average Test Accuracy: 0.473..  Elapsed time is: 37.813 minutes
+running for 20 0.5 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.400..  Average Test Accuracy: 0.550..  Elapsed time is: 39.388 minutes
+running for 50 0.5 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.480..  Average Test Accuracy: 0.542..  Elapsed time is: 41.769 minutes
+running for 60 0.5 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.479..  Average Test Accuracy: 0.533..  Elapsed time is: 43.811 minutes
+running for 80 0.5 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.481..  Average Test Accuracy: 0.547..  Elapsed time is: 45.077 minutes
+running for 100 0.5 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.586..  Average Test Accuracy: 0.536..  Elapsed time is: 47.542 minutes
+running for 120 0.5 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.563..  Average Test Accuracy: 0.544..  Elapsed time is: 49.789 minutes
+running for 150 0.5 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.628..  Average Test Accuracy: 0.548..  Elapsed time is: 52.022 minutes
+running for 180 0.5 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.611..  Average Test Accuracy: 0.531..  Elapsed time is: 56.241 minutes
+running for 200 0.5 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.713..  Average Test Accuracy: 0.528..  Elapsed time is: 57.486 minutes
+running for 220 0.5 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.847..  Average Test Accuracy: 0.520..  Elapsed time is: 60.459 minutes
+running for 250 0.5 SVHN
+Using downloaded and verified file: datasets/SVHN/train/train_32x32.mat
+Using downloaded and verified file: datasets/SVHN/test/test_32x32.mat
+Average Train Loss: 0.000..  Average Test Loss: 1.781..  Average Test Accuracy: 0.530..  Elapsed time is: 61.849 minutes
+
+running for epsilon = 0.2 and MNIST
+running for 10 0.2 MNIST
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to /home/ubuntu/.pytorch/MNIST_data/MNIST/raw/train-images-idx3-ubyte.gz
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 9912422/9912422 [00:00<00:00, 99601150.02it/s]
+Extracting /home/ubuntu/.pytorch/MNIST_data/MNIST/raw/train-images-idx3-ubyte.gz to /home/ubuntu/.pytorch/MNIST_data/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to /home/ubuntu/.pytorch/MNIST_data/MNIST/raw/train-labels-idx1-ubyte.gz
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 28881/28881 [00:00<00:00, 27518331.17it/s]
+Extracting /home/ubuntu/.pytorch/MNIST_data/MNIST/raw/train-labels-idx1-ubyte.gz to /home/ubuntu/.pytorch/MNIST_data/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to /home/ubuntu/.pytorch/MNIST_data/MNIST/raw/t10k-images-idx3-ubyte.gz
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 1648877/1648877 [00:00<00:00, 39874145.38it/s]
+Extracting /home/ubuntu/.pytorch/MNIST_data/MNIST/raw/t10k-images-idx3-ubyte.gz to /home/ubuntu/.pytorch/MNIST_data/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to /home/ubuntu/.pytorch/MNIST_data/MNIST/raw/t10k-labels-idx1-ubyte.gz
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4542/4542 [00:00<00:00, 66843960.59it/s]
+Extracting /home/ubuntu/.pytorch/MNIST_data/MNIST/raw/t10k-labels-idx1-ubyte.gz to /home/ubuntu/.pytorch/MNIST_data/MNIST/raw
+
+Average Train Loss: 0.000..  Average Test Loss: 1.780..  Average Test Accuracy: 0.596..  Elapsed time is: 23.597 minutes
+running for 20 0.2 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.911..  Average Test Accuracy: 0.765..  Elapsed time is: 23.911 minutes
+running for 50 0.2 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.538..  Average Test Accuracy: 0.838..  Elapsed time is: 24.563 minutes
+running for 60 0.2 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.829..  Average Test Accuracy: 0.763..  Elapsed time is: 24.841 minutes
+running for 80 0.2 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.558..  Average Test Accuracy: 0.832..  Elapsed time is: 25.647 minutes
+running for 100 0.2 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.548..  Average Test Accuracy: 0.852..  Elapsed time is: 26.413 minutes
+running for 120 0.2 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.617..  Average Test Accuracy: 0.819..  Elapsed time is: 26.517 minutes
+running for 150 0.2 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.496..  Average Test Accuracy: 0.871..  Elapsed time is: 28.588 minutes
+running for 180 0.2 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.533..  Average Test Accuracy: 0.849..  Elapsed time is: 29.808 minutes
+running for 200 0.2 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.553..  Average Test Accuracy: 0.821..  Elapsed time is: 29.590 minutes
+running for 220 0.2 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.516..  Average Test Accuracy: 0.842..  Elapsed time is: 31.288 minutes
+running for 250 0.2 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.640..  Average Test Accuracy: 0.801..  Elapsed time is: 31.054 minutes
+running for epsilon = 0.1 and MNIST
+
+running for 10 0.1 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 2.235..  Average Test Accuracy: 0.193..  Elapsed time is: 23.655 minutes
+running for 20 0.1 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 1.665..  Average Test Accuracy: 0.536..  Elapsed time is: 23.918 minutes
+running for 50 0.1 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.750..  Average Test Accuracy: 0.809..  Elapsed time is: 24.769 minutes
+running for 60 0.1 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.869..  Average Test Accuracy: 0.749..  Elapsed time is: 25.142 minutes
+running for 80 0.1 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.552..  Average Test Accuracy: 0.849..  Elapsed time is: 25.781 minutes
+running for 100 0.1 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.608..  Average Test Accuracy: 0.820..  Elapsed time is: 26.588 minutes
+running for 120 0.1 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.631..  Average Test Accuracy: 0.803..  Elapsed time is: 26.736 minutes
+running for 150 0.1 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.552..  Average Test Accuracy: 0.809..  Elapsed time is: 28.483 minutes
+running for 180 0.1 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.561..  Average Test Accuracy: 0.827..  Elapsed time is: 29.783 minutes
+running for 200 0.1 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.600..  Average Test Accuracy: 0.814..  Elapsed time is: 29.403 minutes
+running for 220 0.1 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.892..  Average Test Accuracy: 0.747..  Elapsed time is: 30.978 minutes
+running for 250 0.1 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.654..  Average Test Accuracy: 0.809..  Elapsed time is: 30.956 minutes
+running for epsilon = 0.5 and MNIST
+
+running for 10 0.5 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.796..  Average Test Accuracy: 0.787..  Elapsed time is: 23.635 minutes
+running for 20 0.5 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.500..  Average Test Accuracy: 0.849..  Elapsed time is: 24.020 minutes
+running for 50 0.5 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.735..  Average Test Accuracy: 0.775..  Elapsed time is: 24.692 minutes
+running for 60 0.5 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.688..  Average Test Accuracy: 0.780..  Elapsed time is: 25.105 minutes
+running for 80 0.5 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.627..  Average Test Accuracy: 0.812..  Elapsed time is: 25.605 minutes
+running for 100 0.5 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.549..  Average Test Accuracy: 0.826..  Elapsed time is: 26.649 minutes
+running for 120 0.5 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.514..  Average Test Accuracy: 0.844..  Elapsed time is: 26.808 minutes
+running for 150 0.5 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.731..  Average Test Accuracy: 0.795..  Elapsed time is: 28.693 minutes
+running for 180 0.5 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.550..  Average Test Accuracy: 0.824..  Elapsed time is: 30.046 minutes
+running for 200 0.5 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.632..  Average Test Accuracy: 0.803..  Elapsed time is: 29.523 minutes
+running for 220 0.5 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.651..  Average Test Accuracy: 0.794..  Elapsed time is: 30.788 minutes
+running for 250 0.5 MNIST
+Average Train Loss: 0.000..  Average Test Loss: 0.643..  Average Test Accuracy: 0.786..  Elapsed time is: 31.035 minutes
+(pytorch) ubuntu@ip-172-31-14-133:~/code$
