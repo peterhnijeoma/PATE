@@ -14,8 +14,8 @@ import sys
 import time
 
 ## required data transformation
-if sys.argv[3] == 'SVHN':  # CL argument 3 is for the dataset to use
-    data_transform = transforms.Compose([##transforms.CenterCrop(28),
+if sys.argv[4] == 'SVHN':  # CL argument 4 is for the dataset to use
+    data_transform = transforms.Compose([transforms.CenterCrop(28),
                                          ##transforms.Grayscale(),
                                          transforms.ToTensor(),
                                          ##transforms.Normalize((0.5,), (0.5,))
@@ -53,19 +53,36 @@ if sys.argv[3] == 'SVHN':  # CL argument 3 is for the dataset to use
 
         #     self.fc_drop = nn.Dropout(p=0.2)  ## 0.2
 
+        # def __init__(self):
+        #     super().__init__()
+        #     ##self.fc0 = nn.Linear(3072, 1024)
+        #     self.fc0 = nn.Linear(3072, 2048)
+        #     self.fc1 = nn.Linear(2048, 1024)
+        #     self.fc2 = nn.Linear(1024, 784)
+        #     self.fc3 = nn.Linear(784, 512)
+        #     self.fc4 = nn.Linear(512, 256)
+        #     self.fc5 = nn.Linear(256, 128)
+        #     self.fc6 = nn.Linear(128, 64)
+        #     self.fc7 = nn.Linear(64, 10)
+
+        #     self.fc_drop = nn.Dropout(p=0.2)  ## 0.2
+
+        ## convolution
         def __init__(self):
             super().__init__()
-            ##self.fc0 = nn.Linear(3072, 1024)
-            self.fc0 = nn.Linear(3072, 2048)
-            self.fc1 = nn.Linear(2048, 1024)
-            self.fc2 = nn.Linear(1024, 784)
-            self.fc3 = nn.Linear(784, 512)
-            self.fc4 = nn.Linear(512, 256)
-            self.fc5 = nn.Linear(256, 128)
-            self.fc6 = nn.Linear(128, 64)
-            self.fc7 = nn.Linear(64, 10)
 
-            self.fc_drop = nn.Dropout(p=0.2)  ## 0.2
+            self.conv_1 = nn.Conv2d(3, 16, 5, 1, 2)
+            ##self.conv_1 = nn.Conv2d(1, 16, 5, 1, 2)
+            self.batch_1 = nn.BatchNorm2d(16)
+            self.pool = nn.MaxPool2d(2,2)
+            self.conv_2 = nn.Conv2d(16, 32, 5, 1, 2)
+            self.batch_2 = nn.BatchNorm2d(32)
+            self.fc1 = nn.Linear(32*7*7, 64)
+            ##self.fc1 = nn.Linear(32*8*8, 64)
+            self.fc2 = nn.Linear(64, 10)
+
+            self.fc_drop = nn.Dropout(p=0.2)
+            self.conv_drop = nn.Dropout2d()
     
         # def forward(self, img):
         #     ## flatten input image
@@ -85,24 +102,117 @@ if sys.argv[3] == 'SVHN':  # CL argument 3 is for the dataset to use
         #     img_flat = F.relu(self.fc6(img_flat))
         #     return F.log_softmax(self.fc7(img_flat), dim=1)
 
-        def forward(self, img):
-            ## flatten input image
-            img_flat = img.view(img.shape[0], -1)
-            img_flat = F.relu(self.fc0(img_flat))
-            img_flat = self.fc_drop(img_flat)
-            img_flat = F.relu(self.fc1(img_flat))
-            img_flat = self.fc_drop(img_flat)
-            img_flat = F.relu(self.fc2(img_flat))
-            img_flat = self.fc_drop(img_flat)
-            img_flat = F.relu(self.fc3(img_flat))
-            img_flat = self.fc_drop(img_flat)
-            img_flat = F.relu(self.fc4(img_flat))
-            img_flat = self.fc_drop(img_flat)
-            img_flat = F.relu(self.fc5(img_flat))
-            img_flat = self.fc_drop(img_flat)
-            img_flat = F.relu(self.fc6(img_flat))
-            return F.log_softmax(self.fc7(img_flat), dim=1)
+        # def forward(self, img):
+        #     ## flatten input image
+        #     img_flat = img.view(img.shape[0], -1)
+        #     img_flat = F.relu(self.fc0(img_flat))
+        #     img_flat = self.fc_drop(img_flat)
+        #     img_flat = F.relu(self.fc1(img_flat))
+        #     img_flat = self.fc_drop(img_flat)
+        #     img_flat = F.relu(self.fc2(img_flat))
+        #     img_flat = self.fc_drop(img_flat)
+        #     img_flat = F.relu(self.fc3(img_flat))
+        #     img_flat = self.fc_drop(img_flat)
+        #     img_flat = F.relu(self.fc4(img_flat))
+        #     img_flat = self.fc_drop(img_flat)
+        #     img_flat = F.relu(self.fc5(img_flat))
+        #     img_flat = self.fc_drop(img_flat)
+        #     img_flat = F.relu(self.fc6(img_flat))
+        #     return F.log_softmax(self.fc7(img_flat), dim=1)
 
+        ## use with convolution
+        def forward(self, img):
+            img_out = self.conv_1(img)
+            img_out = self.conv_drop(img_out)
+            ##print("image shape after conv 1 ", img_out.shape)
+            img_out = F.relu(self.batch_1(img_out))
+            ##print("image shape after conv 1 and batch 1", img_out.shape)
+            img_out = self.pool(img_out)
+
+            ##print("image shape after conv 1, batch 1, and pool", img_out.shape)
+
+            img_out = self.conv_2(img_out)
+            ##img_out = self.conv_drop(img_out)
+            ##print("image shape after conv 2", img_out.shape)
+            img_out = F.relu(self.batch_2(img_out))
+            ##print("image shape after conv 2 and batch 2", img_out.shape)
+            img_out = self.pool(img_out)
+
+            ##print("image shape after conv 2, batch 2, and pool", img_out.shape)
+
+            # flatten img_out for FC layers
+            img_flat = img_out.view(img_out.size(0), -1)
+
+            img_flat = self.fc1(img_flat)
+            img_flat = self.fc_drop(img_flat)
+            img_flat = self.fc2(img_flat)
+
+            return F.log_softmax(img_flat, dim=1)
+elif sys.argv[4] == 'FMNIST':  # CL argument 4 is for the dataset to use
+    data_transform = transforms.Compose([transforms.ToTensor(),
+                                         transforms.Normalize([0.5], [0.5])
+                                        ])
+
+    ## load datasets
+    ## fashion MNIST training dataset will be used to train teacher models
+    train_dataset = datasets.FashionMNIST('./fashionMNIST/', train=True,
+                                          download=True,
+                                          transform=data_transform)
+    ## fashion MNIST test dataset will be used to train student model
+    test_dataset = datasets.FashionMNIST('./fashionMNIST/', train=False,
+                                         download=True,
+                                         transform=data_transform)
+    
+    # print("fashion MNIST test datset samples are:", len(test_dataset))
+    # print()
+
+    epochs = 100 ##200
+    
+    class Classifier(nn.Module):
+        ## convolution
+        def __init__(self):
+            super().__init__()
+
+            self.conv_1 = nn.Conv2d(1, 16, 5, 1, 2)
+            self.batch_1 = nn.BatchNorm2d(16)
+            self.pool = nn.MaxPool2d(2,2)
+            self.conv_2 = nn.Conv2d(16, 32, 5, 1, 2)
+            self.batch_2 = nn.BatchNorm2d(32)
+            self.fc1 = nn.Linear(32*7*7, 64)
+            self.fc2 = nn.Linear(64, 10)
+
+            self.fc_drop = nn.Dropout(p=0.2)
+            self.conv_drop = nn.Dropout2d()
+
+        ## use with convolution
+        def forward(self, img):
+            img_out = self.conv_1(img)
+            img_out = self.conv_drop(img_out)
+            ##print("image shape after conv 1 ", img_out.shape)
+            img_out = F.relu(self.batch_1(img_out))
+            ##print("image shape after conv 1 and batch 1", img_out.shape)
+            img_out = self.pool(img_out)
+
+            ##print("image shape after conv 1, batch 1, and pool", img_out.shape)
+
+            img_out = self.conv_2(img_out)
+            ##img_out = self.conv_drop(img_out)
+            ##print("image shape after conv 2", img_out.shape)
+            img_out = F.relu(self.batch_2(img_out))
+            ##print("image shape after conv 2 and batch 2", img_out.shape)
+            img_out = self.pool(img_out)
+
+            ##print("image shape after conv 2, batch 2, and pool", img_out.shape)
+
+            # flatten img_out for FC layers
+            img_flat = img_out.view(img_out.size(0), -1)
+
+            img_flat = self.fc1(img_flat)
+            img_flat = self.fc_drop(img_flat)
+            img_flat = self.fc2(img_flat)
+
+            return F.log_softmax(img_flat, dim=1)
+        
 else:  # MNIST
     data_transform = transforms.Compose([transforms.ToTensor(),
                                          transforms.Normalize((0.5,), (0.5,))])
@@ -141,9 +251,13 @@ else:  # MNIST
         
 ##global variables
 number_teachers = int(sys.argv[1]) # get number of teachers from CL argument 1 ##10 ###250 #200 #150 #120 #100 #50 #10     
-data_batch_size = 64 ##32  ##8 ##16    
+data_batch_size = 64 ##8 ##16 ##32    
 epsilon = float(sys.argv[2]) # get epsilon from CL argument 2 ##0.2
-beta = 1 / epsilon
+if sys.argv[3] == "true":
+    beta = 1 / epsilon
+else:
+    beta = 0  ## when no noise is added, the value of beta does not matter
+
 ##gpu_1_device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 multi_gpu_device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -224,9 +338,9 @@ def make_prediction(model, data_loader):
     ##print("outputs shape is: ", outputs)
     
     for img, labels in data_loader:
-        if torch.cuda.is_available():
-            ##img, labels = img.cuda(), labels.cuda()
-            gpu_img, gpu_labels = img.to(multi_gpu_device), labels.to(multi_gpu_device)
+        ##if torch.cuda.is_available():
+        ##img, labels = img.cuda(), labels.cuda()
+        gpu_img, gpu_labels = img.to(multi_gpu_device), labels.to(multi_gpu_device)
         with torch.no_grad():
             output = model.forward(gpu_img)
             label = torch.argmax(torch.exp(output), dim=1)
@@ -266,7 +380,10 @@ def aggregate_teachers(teachers, dataloader):
 
         for i in range(len(label_counts)):
             ## add noise - DP
-            label_counts[i] += np.random.laplace(0, beta, 1)
+            if (sys.argv[3] == 'true'):
+                label_counts[i] += np.random.laplace(0, beta, 1)
+            else:
+                label_counts[i] += 0  ## add 0 noise to count
         
         ## aggregate label
         new_label = np.argmax(label_counts)
@@ -366,28 +483,36 @@ for e in range(epochs):
 ## check accuracy of student model
 ## model is in evaluation mode and gradients not stored
 student_model.eval()
-test_loss = 0
-accuracy = 0
+# test_loss = 0
+# accuracy = 0
 ##iteration = 0
 ##print("number of student test samples is:", len(student_test_loader))
 ##print("number of student test dataset samples is:", len(student_test_dataset))
 ##print()
 with torch.no_grad():
-    for images, labels in student_test_loader:
-        ##iteration += 1
-        if torch.cuda.is_available():
+    tests_accuracy = []
+    tests_loss = []
+    for k in range(10):
+        test_loss = 0
+        accuracy = 0
+        for images, labels in student_test_loader:
+            ##iteration += 1
+            ##if torch.cuda.is_available():
             gpu_images, gpu_labels = images.to(multi_gpu_device), labels.to(multi_gpu_device)
-        log_ps = student_model(gpu_images)
-        test_loss += criterion(log_ps, gpu_labels).item()
-                    
-        ps = torch.exp(log_ps)
-        top_p, top_class = ps.topk(1, dim=1)
-        equals = top_class == gpu_labels.view(*top_class.shape)
+            log_ps = student_model(gpu_images)
+            test_loss += criterion(log_ps, gpu_labels).item()
+                        
+            ps = torch.exp(log_ps)
+            top_p, top_class = ps.topk(1, dim=1)
+            equals = top_class == gpu_labels.view(*top_class.shape)
 
-        ##print("number of images processed for iteration " + str(iteration) + " is:", images.size())
-        ##print("sum of equals is:", equals.sum().item())
-        accuracy += equals.sum().item()
-        ##print("part accuracy is", accuracy)
+            ##print("number of images processed for iteration " + str(iteration) + " is:", images.size())
+            ##print("sum of equals is:", equals.sum().item())
+            accuracy += equals.sum().item()
+            ##print("part accuracy is", accuracy)
+        
+        tests_accuracy.append(accuracy/len(student_test_dataset))
+        tests_loss.append(test_loss/len(student_test_loader))
 
 ## back to train mode
 student_model.train()
@@ -396,8 +521,12 @@ end_time = time.time()
 
 ##print("Epoch: {}/{}.. ".format(e+1, epochs),
 print("Average Train Loss: {:.3f}.. ".format(running_loss/len(student_train_loader)),
-      "Average Test Loss: {:.3f}.. ".format(test_loss/len(student_test_loader)),
-      "Average Test Accuracy: {:.3f}.. ".format(accuracy/len(student_test_dataset)),
-      "Elapsed time is: {:.3f} minutes".format((end_time - start_time)/60))
+      "Average Test Loss for 10 runs: {:.3f}.. ".format(sum(tests_loss) / len(tests_loss)),
+      "Average Test Accuracy for 10 runs: {:.3f}.. ".format(sum(tests_accuracy)/len(tests_accuracy)),
+      "Total Elapsed time is: {:.3f} minutes".format((end_time - start_time)/60))
+# print("Average Train Loss: {:.3f}.. ".format(running_loss/len(student_train_loader)),
+#       "Average Test Loss: {:.3f}.. ".format(test_loss/len(student_test_loader)),
+#       "Average Test Accuracy: {:.3f}.. ".format(accuracy/len(student_test_dataset)),
+#       "Elapsed time is: {:.3f} minutes".format((end_time - start_time)/60))
 
 
