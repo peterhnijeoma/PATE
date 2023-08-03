@@ -1,0 +1,18 @@
+############### steps to create an instance on AWS ###############
+The following steps are to create a new instance on AWS.
+AWS already has OS images enabled for deep learning.
+
+1. log in to AWS
+2. click Services (top left corner of screen)
+3. Select Compute
+4. Select EC2
+5. expand Instances
+6. click "launch instance" button (top right cornner of screen)
+7. provide a name for the instance
+8. select OS - browse for an image for deep learning - this comes with Pytorch or Tensorflow
+9. select instance type - find an instance type with GPU eg "g4dn..."
+10. create a key apir or use an existing key file
+11. configure storage - the default is usually ok.
+12. click "Launch Instance" (lower right conner) to create the instance.
+13. login to instance with a SSH tool (eg putty) using yourkey file from step 10 above for authentication
+14. activate the already installed Pytorch environment - follow instructions displayed on your screen during login.

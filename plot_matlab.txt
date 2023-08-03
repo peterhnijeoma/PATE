@@ -1,35 +1,63 @@
 numb_teacher = [10, 20, 50, 60, 80, 100, 120, 150, 180, 200, 220, 250];
+%{
+svhn_005_percent = [0.119, 0.154, 0.210, 0.380, 0.422, 0.577, 0.656, 0.692, 0.700, 0.683, 0.640, 0.668];
+svhn_010_percent = [0.196, 0.203, 0.599, 0.659, 0.739, 0.728, 0.721, 0.770, 0.691, 0.731, 0.727, 0.720];
+svhn_020_percent = [0.206, 0.452, 0.714, 0.733, 0.727, 0.769, 0.739, 0.729, 0.743, 0.739, 0.710, 0.750];
+svhn_050_percent = [0.642, 0.751, 0.758, 0.723, 0.681, 0.716, 0.727, 0.738, 0.757, 0.690, 0.739, 0.680];
+svhn_000_percent = [0.739, 0.749, 0.769, 0.776, 0.723, 0.754, 0.728, 0.724, 0.691, 0.703, 0.729, 0.734];
 
-svhn_02_percent = [0.206, 0.452, 0.714, 0.733, 0.727, 0.769, 0.739, 0.729, 0.743, 0.739, 0.710, 0.750];
-svhn_01_percent = [0.196, 0.203, 0.599, 0.659, 0.739, 0.728, 0.721, 0.770, 0.691, 0.731, 0.727, 0.720];
-svhn_05_percent = [0.642, 0.751, 0.758, 0.723, 0.681, 0.716, 0.727, 0.738, 0.757, 0.690, 0.739, 0.680];
-mnist_02_percent = [0.565, 0.754, 0.815, 0.803, 0.814, 0.811, 0.835, 0.812, 0.792, 0.813, 0.860, 0.822];
-mnist_01_percent = [0.216, 0.608, 0.839, 0.791, 0.823, 0.840, 0.813, 0.811, 0.837, 0.776, 0.854, 0.838];
-mnist_05_percent = [0.853, 0.814, 0.826, 0.837, 0.831, 0.790, 0.814, 0.772, 0.817, 0.850, 0.810, 0.848];
-fmnist_02_percent = [0.598, 0.732, 0.809, 0.806, 0.807, 0.802, 0.772, 0.778, 0.782, 0.792, 0.793, 0.772];
-fmnist_01_percent = [0.401, 0.570, 0.777, 0.778, 0.799, 0.790, 0.814, 0.787, 0.797, 0.810, 0.790, 0.791];
-fmnist_05_percent = [0.765, 0.820, 0.807, 0.809, 0.795, 0.822, 0.790, 0.821, 0.802, 0.773, 0.794, 0.793];
+mnist_005_percent = [0.119, 0.202, 0.686, 0.778, 0.801, 0.821, 0.815, 0.748, 0.776, 0.819, 0.860, 0.832];
+mnist_010_percent = [0.216, 0.608, 0.839, 0.791, 0.823, 0.840, 0.813, 0.811, 0.837, 0.776, 0.854, 0.838];
+mnist_020_percent = [0.565, 0.754, 0.815, 0.803, 0.814, 0.811, 0.835, 0.812, 0.792, 0.813, 0.860, 0.822];
+mnist_050_percent = [0.853, 0.814, 0.826, 0.837, 0.831, 0.790, 0.814, 0.772, 0.817, 0.850, 0.810, 0.848];
+mnist_000_percent = [0.808, 0.843, 0.812, 0.859, 0.833, 0.836, 0.859, 0.829, 0.777, 0.798, 0.814, 0.842];
+
+fmnist_005_percent = [0.267, 0.421, 0.661, 0.729, 0.751, 0.765, 0.768, 0.789, 0.757, 0.785, 0.802, 0.803];
+fmnist_010_percent = [0.401, 0.570, 0.777, 0.778, 0.799, 0.790, 0.814, 0.787, 0.797, 0.810, 0.790, 0.791];
+fmnist_020_percent = [0.598, 0.732, 0.809, 0.806, 0.807, 0.802, 0.772, 0.778, 0.782, 0.792, 0.793, 0.772];
+fmnist_050_percent = [0.765, 0.820, 0.807, 0.809, 0.795, 0.822, 0.790, 0.821, 0.802, 0.773, 0.794, 0.793];
+fmnist_000_percent = [0.792, 0.795, 0.816, 0.802, 0.814, 0.804, 0.793, 0.796, 0.787, 0.804, 0.778, 0.794];
+%}
+%% -------------------------- 10 run average pecentages ---------------------
+svhn_005_percent = [0.102, 0.130, 0.705, 0.697, 0.825, 0.813, 0.841, 0.860, 0.851, 0.795, 0.827, 0.824];
+svhn_010_percent = [0.188, 0.574, 0.790, 0.836, 0.808, 0.817, 0.805, 0.849, 0.825, 0.697, 0.820, 0.822];
+svhn_020_percent = [0.451, 0.793, 0.784, 0.805, 0.806, 0.856, 0.856, 0.732, 0.798, 0.846, 0.832, 0.835];
+svhn_050_percent = [0.843, 0.863, 0.840, 0.817, 0.800, 0.836, 0.855, 0.846, 0.823, 0.852, 0.827, 0.840];
+svhn_000_percent = [0.778, 0.796, 0.854, 0.852, 0.829, 0.859, 0.817, 0.788, 0.830, 0.791, 0.855, 0.800];
+
+mnist_005_percent = [0.099, 0.332, 0.641, 0.771, 0.824, 0.826, 0.868, 0.814, 0.834, 0.818, 0.817, 0.831];
+mnist_010_percent = [0.179, 0.535, 0.837, 0.799, 0.842, 0.847, 0.827, 0.819, 0.741, 0.849, 0.835, 0.802];
+mnist_020_percent = [0.398, 0.851, 0.781, 0.825, 0.831, 0.810, 0.843, 0.802, 0.803, 0.843, 0.740, 0.815];
+mnist_050_percent = [0.828, 0.788, 0.786, 0.838, 0.850, 0.846, 0.767, 0.797, 0.797, 0.822, 0.832, 0.818];
+mnist_000_percent = [0.756, 0.885, 0.834, 0.840, 0.839, 0.864, 0.824, 0.832, 0.850, 0.794, 0.830, 0.811];
+
+fmnist_005_percent = [0.306, 0.521, 0.676, 0.716, 0.758, 0.749, 0.762, 0.780, 0.793, 0.764, 0.783, 0.788];
+fmnist_010_percent = [0.465, 0.582, 0.765, 0.785, 0.808, 0.804, 0.792, 0.751, 0.791, 0.803, 0.791, 0.780];
+fmnist_020_percent = [0.663, 0.742, 0.784, 0.806, 0.800, 0.812, 0.764, 0.794, 0.793, 0.800, 0.798, 0.796];
+fmnist_050_percent = [0.801, 0.817, 0.814, 0.799, 0.813, 0.798, 0.811, 0.797, 0.793, 0.773, 0.795, 0.791];
+fmnist_000_percent = [0.800, 0.803, 0.812, 0.812, 0.821, 0.806, 0.800, 0.801, 0.801, 0.786, 0.794, 0.783];
+
 
 figure(1);
-plot(numb_teacher, svhn_01_percent, 'g--o', numb_teacher, svhn_02_percent, 'r-.x', numb_teacher, svhn_05_percent, 'b');
+plot(numb_teacher, svhn_005_percent, 'm-', numb_teacher, svhn_010_percent, 'g-', numb_teacher, svhn_020_percent, 'r-', numb_teacher, svhn_050_percent, 'b-', numb_teacher, svhn_000_percent, 'k-');
 ylim([0.000 1.000]);
-legend('epsilon = 0.1', 'epsilon = 0.2', 'epsilon = 0.5');
+legend('epsilon = 0.05', 'epsilon = 0.1', 'epsilon = 0.2', 'epsilon = 0.5', 'No Noise', 'Location', 'southeast');
 xlabel('Number of Teacher models');
 ylabel('Percent Accuracy (times 100)');
-title('PATE - Percent Accuracy for SVHN');
+title('PATE - Percent Accuracy for SVHN dataset');
 
 figure(2);
-plot(numb_teacher, mnist_01_percent, 'g--o', numb_teacher, mnist_02_percent, 'r-.x', numb_teacher, mnist_05_percent, 'b');
+plot(numb_teacher, mnist_005_percent, 'm-', numb_teacher, mnist_010_percent, 'g-', numb_teacher, mnist_020_percent, 'r-', numb_teacher, mnist_050_percent, 'b-', numb_teacher, mnist_000_percent, 'k-');
 ylim([0.000 1.200]);
-legend('epsilon = 0.1', 'epsilon = 0.2', 'epsilon = 0.5');
+legend('epsilon = 0.05', 'epsilon = 0.1', 'epsilon = 0.2', 'epsilon = 0.5', 'No Noise', 'Location', 'southeast');
 xlabel('Number of Teacher models');
 ylabel('Percent Accuracy (times 100)');
-title('PATE - Percent Accuracy for MNIST');
+title('PATE - Percent Accuracy for MNIST dataset');
 
 figure(3);
-plot(numb_teacher, fmnist_01_percent, 'g--o', numb_teacher, fmnist_02_percent, 'r-.x', numb_teacher, fmnist_05_percent, 'b');
+plot(numb_teacher, fmnist_005_percent, 'm-', numb_teacher, fmnist_010_percent, 'g-', numb_teacher, fmnist_020_percent, 'r-', numb_teacher, fmnist_050_percent, 'b-', numb_teacher, fmnist_000_percent, 'k-');
 ylim([0.000 1.200]);
-legend('epsilon = 0.1', 'epsilon = 0.2', 'epsilon = 0.5');
+legend('epsilon = 0.05', 'epsilon = 0.1', 'epsilon = 0.2', 'epsilon = 0.5', 'No Noise');
 xlabel('Number of Teacher models');
 ylabel('Percent Accuracy (times 100)');
 title('PATE - Percent Accuracy for Fashion-MNIST');
